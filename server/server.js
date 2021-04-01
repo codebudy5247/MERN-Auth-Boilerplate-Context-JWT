@@ -31,6 +31,10 @@ app.use(cors());
 
 //Import Routes
 
+import userRouter from "./routes/userRoutes.js";
+
+app.use("/api/users", userRouter);
+
 // static public files
 //app.use(express.static("public"));
 const __filename = fileURLToPath(import.meta.url);
@@ -39,14 +43,14 @@ const __dirname = path.dirname(__filename);
 
 
 app.get("/", (req, res) => {
-  res.send("API is running....");
+    res.send("API is running....");
 });
 
 const PORT = process.env.PORT || 5000;
 
 app.listen(
-  PORT,
-  console.log(
-    `Server running in ${process.env.NODE_ENV} mode on port ${PORT}`.yellow.bold
-  )
+    PORT,
+    console.log(
+        `Server running in ${process.env.NODE_ENV} mode on port ${PORT}`.yellow.bold
+    )
 );
