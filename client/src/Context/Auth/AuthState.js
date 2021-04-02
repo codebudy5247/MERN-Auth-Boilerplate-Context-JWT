@@ -18,7 +18,7 @@ const AuthState = (props) => {
 
   //Register User
   const register = async (formData, history) => {
-    console.log(formData);
+    //console.log(formData);
     try {
 
       const config = {
@@ -50,6 +50,10 @@ const AuthState = (props) => {
       console.log(error);
     }
   };
+
+
+
+  //Logout User
   const logout = (history) => {
     dispatch({
       type: LOGOUT

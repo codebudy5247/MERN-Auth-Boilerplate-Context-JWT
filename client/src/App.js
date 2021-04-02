@@ -3,6 +3,15 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Home from "./Components/Home/Home"
 import Auth from "./Components/Auth/Auth"
 import AuthState from "./Context/Auth/AuthState";
+import AuthToken from "./Context/Auth/AuthToken"
+
+
+
+
+if (localStorage.token) {
+  console.log("working");
+  AuthToken(localStorage.token);
+}
 
 const App = () => {
   return (

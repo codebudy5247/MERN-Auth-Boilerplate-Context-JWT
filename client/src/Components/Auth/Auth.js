@@ -2,6 +2,8 @@ import React, { useContext, useState } from "react";
 import useStyles from "./style";
 import Input from "./input";
 
+import Nav from "../Navbar/Header"
+
 import AuthContext from "../../Context/Auth/AuthContext"
 
 import {
@@ -27,7 +29,7 @@ const Auth = () => {
     const classes = useStyles();
 
     const authContext = useContext(AuthContext);
-    console.log(authContext);
+    //console.log(authContext);
     const { register, login } = authContext
 
     const [showPassword, setShowPassword] = useState(false);
@@ -57,6 +59,7 @@ const Auth = () => {
     };
     return (
         <>
+        <Nav />
             <Container component="main" maxWidth="xs">
                 <Paper className={classes.paper} elevation={3}>
                     <Avatar className={classes.avatar}></Avatar>
